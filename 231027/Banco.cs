@@ -12,12 +12,12 @@ namespace _231027
 {
     internal class Banco
     {
-        // Criando as variáveis publicas para conexão  e consultaserão usadas em todoo projeto
+        // Criando as variáveis publicas para conexão  e consultaserão usadas em todo o projeto
         // Connection responsável pela conexão com o MySQL
         public static MySqlConnection Conexao;
         // Command responsável pelas instruções SQL a serem executadas
         public static MySqlCommand Comando;
-        // Adapter responsável por inserir dados em um tadaTable
+        // Adapter responsável por inserir dados em um dataTable
         public static MySqlDataAdapter Adaptador;
         // DataTable responsável por ligar o banco em controles com a propriedade DataSource
         public static DataTable datTabela;
