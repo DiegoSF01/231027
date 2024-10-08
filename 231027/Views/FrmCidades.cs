@@ -73,8 +73,8 @@ namespace _231027.Views
 
             c = new Cidade()
             {
-                id = int.Parse(txtID.Text)
-                nome = txtNome.Text
+                id = int.Parse(txtID.Text),
+                nome = txtNome.Text,
                 uf = txtUF.Text
             };
             c.Alterar();
