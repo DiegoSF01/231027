@@ -7,6 +7,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.Crmf;
+using System.Data.SqlClient;
 
 namespace _231027
 {
@@ -65,6 +66,15 @@ namespace _231027
                                            "(id integer auto_increment primary key, " +
                                            "nome char(40), " +
                                            "uf char(02))", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Marcas " +
+                                            "(id integer auto_increment primary key, " +
+                                            "marca char(20))", Conexao);
+                Comando.ExecuteNonQuery();
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias " +
+                                            "(id integer auto_increment primary key, " +
+                                            "categoria char(20))", Conexao);
                 Comando.ExecuteNonQuery();
 
                 // Chama a função para fechar a conexao com o banco
