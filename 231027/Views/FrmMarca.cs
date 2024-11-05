@@ -20,7 +20,7 @@ namespace _231027.Views
         }
         void limpaControles()
         {
-            txttID.Clear();
+            txtID.Clear();
             txtMarca.Clear();
             txtPesquisa.Clear();
         }
@@ -34,13 +34,13 @@ namespace _231027.Views
             dgvMarcas.DataSource = m.Consultar();
         }
 
-        private void FrmMarcas_Load(object sender, EventArgs e)
+        private void FrmMarca_Load(object sender, EventArgs e)
         {
             limpaControles();
             carregarGrid("");
         }
 
-        private void btnadd_Click(object sender, EventArgs e) //botao incluir
+        private void btnIncluir_Click(object sender, EventArgs e)
         {
             if (txtMarca.Text == string.Empty) return;
 
@@ -54,23 +54,13 @@ namespace _231027.Views
             carregarGrid("");
         }
 
-        private void dgvMarcas_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAlterar_Click_1(object sender, EventArgs e)
         {
-
-            if (dgvMarcas.RowCount > 0)
-            {
-                txtMarca.Text = dgvMarcas.CurrentRow.Cells["marca"].Value.ToString();
-                txttID.Text = dgvMarcas.CurrentRow.Cells["id"].Value.ToString();
-            }
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            if (txttID.Text == String.Empty) return;
+            if (txtID.Text == String.Empty) return;
 
             m = new Marca()
             {
-                id = int.Parse(txttID.Text),
+                id = int.Parse(txtID.Text),
                 marca = txtMarca.Text
             };
             m.Alterar();
@@ -79,23 +69,25 @@ namespace _231027.Views
             carregarGrid("");
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnPesquisa_Click_1(object sender, EventArgs e)
         {
-            limpaControles();
-            carregarGrid("");
-
-
+            carregarGrid(txtPesquisa.Text);
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnFechar_Click_1(object sender, EventArgs e)
         {
-            if (txttID.Text == "") return;
+            this.Close();
+        }
+
+        private void btnExcluir_Click_1(object sender, EventArgs e)
+        {
+            if (txtID.Text == "") return;
 
             if (MessageBox.Show("Deseja excluir a Marca?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 m = new Marca()
                 {
-                    id = int.Parse(txttID.Text)
+                    id = int.Parse(txtID.Text)
                 };
                 m.Excluir();
 
@@ -104,14 +96,19 @@ namespace _231027.Views
             }
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            limpaControles();
+            carregarGrid("");
         }
 
-        private void btnPesquisa_Click(object sender, EventArgs e)
+        private void dgvMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            carregarGrid(txtPesquisa.Text);
+            if (dgvMarcas.RowCount > 0)
+            {
+                txtMarca.Text = dgvMarcas.CurrentRow.Cells["marca"].Value.ToString();
+                txtID.Text = dgvMarcas.CurrentRow.Cells["id"].Value.ToString();
+            }
         }
     }
 }

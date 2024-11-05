@@ -37,7 +37,7 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.txttID = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.Size = new System.Drawing.Size(744, 189);
             this.dgvMarcas.TabIndex = 49;
+            this.dgvMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarcas_CellContentClick);
             // 
             // btnPesquisa
             // 
@@ -60,6 +61,7 @@
             this.btnPesquisa.TabIndex = 48;
             this.btnPesquisa.Text = "Pesquisar";
             this.btnPesquisa.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click_1);
             // 
             // btnFechar
             // 
@@ -69,6 +71,7 @@
             this.btnFechar.TabIndex = 47;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click_1);
             // 
             // btnExcluir
             // 
@@ -78,6 +81,7 @@
             this.btnExcluir.TabIndex = 46;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // btnCancelar
             // 
@@ -87,6 +91,7 @@
             this.btnCancelar.TabIndex = 45;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnAlterar
             // 
@@ -96,6 +101,7 @@
             this.btnAlterar.TabIndex = 44;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
             // 
             // btnIncluir
             // 
@@ -105,6 +111,7 @@
             this.btnIncluir.TabIndex = 43;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // txtMarca
             // 
@@ -120,12 +127,12 @@
             this.txtPesquisa.Size = new System.Drawing.Size(586, 20);
             this.txtPesquisa.TabIndex = 41;
             // 
-            // txttID
+            // txtID
             // 
-            this.txttID.Location = new System.Drawing.Point(30, 30);
-            this.txttID.Name = "txttID";
-            this.txttID.Size = new System.Drawing.Size(113, 20);
-            this.txttID.TabIndex = 40;
+            this.txtID.Location = new System.Drawing.Point(30, 30);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(113, 20);
+            this.txtID.TabIndex = 40;
             // 
             // label4
             // 
@@ -168,12 +175,13 @@
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtPesquisa);
-            this.Controls.Add(this.txttID);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmMarca";
             this.Text = "FrmMarca";
+            this.Load += new System.EventHandler(this.FrmMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,7 +199,7 @@
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.TextBox txttID;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -51,6 +51,7 @@
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.Size = new System.Drawing.Size(744, 189);
             this.dgvCategorias.TabIndex = 36;
+            this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick);
             // 
             // btnPesq
             // 
@@ -60,6 +61,7 @@
             this.btnPesq.TabIndex = 35;
             this.btnPesq.Text = "Pesquisar";
             this.btnPesq.UseVisualStyleBackColor = true;
+            this.btnPesq.Click += new System.EventHandler(this.btnPesq_Click_1);
             // 
             // btnClose
             // 
@@ -69,6 +71,7 @@
             this.btnClose.TabIndex = 34;
             this.btnClose.Text = "Fechar";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // btnExcluir
             // 
@@ -78,6 +81,7 @@
             this.btnExcluir.TabIndex = 33;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // btnCanc
             // 
@@ -87,6 +91,7 @@
             this.btnCanc.TabIndex = 32;
             this.btnCanc.Text = "Cancelar";
             this.btnCanc.UseVisualStyleBackColor = true;
+            this.btnCanc.Click += new System.EventHandler(this.btnCanc_Click_1);
             // 
             // btnAlt
             // 
@@ -96,6 +101,7 @@
             this.btnAlt.TabIndex = 31;
             this.btnAlt.Text = "Alterar";
             this.btnAlt.UseVisualStyleBackColor = true;
+            this.btnAlt.Click += new System.EventHandler(this.btnAlt_Click_1);
             // 
             // btnIncluir
             // 
@@ -105,6 +111,7 @@
             this.btnIncluir.TabIndex = 30;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click_1);
             // 
             // txtCate
             // 
@@ -174,6 +181,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmCategoria";
             this.Text = "FrmCategoria";
+            this.Load += new System.EventHandler(this.FrmCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

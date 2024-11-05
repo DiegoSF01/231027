@@ -43,7 +43,7 @@ namespace _231027.Models
                 //abre conexao com o banco
                 Banco.AbrirConexao();
                 //alimenta o metodo command com a instruçao desejada e indica a conexao utilizada
-                Banco.Comando = new MySqlCommand("UPDATE marcas SET marca = @marca where id =@id", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("Update marcas set marca = @marca where id = @id", Banco.Conexao);
                 //cria parametros utilizados na instruçaosql com seu respectivo conteudo
                 Banco.Comando.Parameters.AddWithValue("@marca", marca); //parametro string
                 Banco.Comando.Parameters.AddWithValue("@id", id);

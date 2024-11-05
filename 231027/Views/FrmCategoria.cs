@@ -34,7 +34,7 @@ namespace _231027.Views
             dgvCategorias.DataSource = cat.Consultar();
         }
 
-        private void btnIncluir_Click(object sender, EventArgs e)
+        private void btnIncluir_Click_1(object sender, EventArgs e)
         {
             if (txtCate.Text == string.Empty) return;
 
@@ -48,7 +48,7 @@ namespace _231027.Views
             carregarGrid("");
         }
 
-        private void btnAlt_Click(object sender, EventArgs e)
+        private void btnAlt_Click_1(object sender, EventArgs e)
         {
             if (txtID.Text == String.Empty) return;
 
@@ -63,13 +63,13 @@ namespace _231027.Views
             carregarGrid("");
         }
 
-        private void btnCanc_Click(object sender, EventArgs e)
+        private void btnCanc_Click_1(object sender, EventArgs e)
         {
             limpaControles();
             carregarGrid("");
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnExcluir_Click_1(object sender, EventArgs e)
         {
             if (txtID.Text == "") return;
 
@@ -86,17 +86,17 @@ namespace _231027.Views
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
-        private void btnPesq_Click(object sender, EventArgs e)
+        private void btnPesq_Click_1(object sender, EventArgs e)
         {
             carregarGrid(txtCons.Text);
         }
 
-        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvCategorias.RowCount > 0)
             {
@@ -105,7 +105,7 @@ namespace _231027.Views
             }
         }
 
-        private void FrmCategorias_Load(object sender, EventArgs e)
+        private void FrmCategoria_Load(object sender, EventArgs e)
         {
             limpaControles();
             carregarGrid("");
