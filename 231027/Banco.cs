@@ -84,8 +84,18 @@ namespace _231027
                                             "dataNasc date, " +
                                             "renda decimal(10,2), " +
                                             "cpf char(14), " +
-                                            "foto varhcar(100), " +
+                                            "foto varchar(100), " +
                                             "venda boolean)", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Produtos " +
+                                            "(Id integer auto_increment primary key, " +
+                                            "descricao char(40), " +
+                                            "idCategoria integer, " +
+                                            "idMarca integer, " +
+                                            "estoque decimal(10,3), " +
+                                            "valorVenda decimal(10,2), " +
+                                            "foto varchar(100))", Conexao);
                 Comando.ExecuteNonQuery();
 
                 // Chama a função para fechar a conexao com o banco
